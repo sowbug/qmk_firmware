@@ -8,7 +8,7 @@
 #define CTL_Z       CTL_T(KC_Z)
 #define ALT_X       ALT_T(KC_X)
 #define ALT_N       ALGR_T(KC_N)
-#define CTL_M       RCTL_T(KC_Z)
+#define CTL_M       RCTL_T(KC_M)
 #define SFT_ENT     RSFT_T(KC_ENT)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -40,7 +40,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [4] = LAYOUT_ortho_3x10(
     _______, _______, _______, _______, _______, KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, KC_PIPE,
     KC_TAB,  _______, _______, _______, _______, KC_LABK, KC_RABK, KC_QUES, KC_COLN, KC_DQUO,
-    _______, _______, _______, _______, _______, _______, KC_HOME, KC_PGUP, KC_PGDN, KC_END
+    _______, _______, _______, _______, _______, _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END
   ),
 
   [5] = LAYOUT_ortho_3x10(
