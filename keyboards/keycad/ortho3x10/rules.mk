@@ -17,12 +17,13 @@ BOOTLOADER = caterina
 BOOTMAGIC_ENABLE = yes	# Virtual DIP switch configuration
 MOUSEKEY_ENABLE = yes	  # Mouse keys
 EXTRAKEY_ENABLE = yes	  # Audio control and System control
-CONSOLE_ENABLE = yes	    # Console for debug
+CONSOLE_ENABLE = no
 COMMAND_ENABLE = no     # Commands for debug and configuration
 SLEEP_LED_ENABLE = no   # Breathing sleep LED during USB suspend
 NKRO_ENABLE = yes		    # USB Nkey Rollover - if this doesn't work, see here: https://github.com/tmk/tmk_keyboard/wiki/FAQ#nkro-doesnt-work
-BACKLIGHT_ENABLE = yes  # Enable keyboard backlight functionality
+BACKLIGHT_ENABLE = no
 AUDIO_ENABLE = no
-RGBLIGHT_ENABLE = yes
+RGBLIGHT_ENABLE = no
+RGB_MATRIX_ENABLE = WS2812
 
 LAYOUTS = ortho_3x10

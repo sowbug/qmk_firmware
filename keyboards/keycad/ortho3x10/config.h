@@ -33,10 +33,7 @@
 
 #define RGB_DI_PIN D1
 #ifdef RGB_DI_PIN
-#define RGBLIGHT_ANIMATIONS
-#define RGBLED_NUM 1
-#define RGBLIGHT_HUE_STEP 12
-#define RGBLIGHT_SAT_STEP 12
-#define RGBLIGHT_VAL_STEP 12
-#define RGBLIGHT_SLEEP
+    #define RGB_MATRIX_KEYPRESSES
+    #define DRIVER_LED_TOTAL (5)
+    #define RGBLED_NUM (DRIVER_LED_TOTAL)
 #endif
