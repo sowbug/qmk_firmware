@@ -23,3 +23,10 @@
 
 // COL2ROW or ROW2COL
 #define DIODE_DIRECTION COL2ROW
+
+#define RGB_DI_PIN B9
+#ifdef RGB_DI_PIN
+    #define RGB_MATRIX_KEYPRESSES
+    #define DRIVER_LED_TOTAL (68)
+    #define RGBLED_NUM (DRIVER_LED_TOTAL)
+#endif
