@@ -13,4 +13,5 @@ led_config_t g_led_config = { {
 }, {
   // LED Index to Flag
   LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT
-} };
+}
+};
