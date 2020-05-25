@@ -164,9 +164,33 @@ uint8_t rgb_matrix_map_row_column_to_led(uint8_t row, uint8_t column, uint8_t *l
 
 void rgb_matrix_update_pwm_buffers(void) { rgb_matrix_driver.flush(); }
 
-void rgb_matrix_set_color(int index, uint8_t red, uint8_t green, uint8_t blue) { rgb_matrix_driver.set_color(index, red, green, blue); }
+void rgb_matrix_maybe_update_rgb_color(uint8_t *red, uint8_t *green, uint8_t *blue) {
+#ifdef BACKLIGHT_DRIVER
+    if (!is_backlight_enabled()) {
+        return;
+    }
+    // The numerator in the expression below should be RGB_MATRIX_MAXIMUM_BRIGHTNESS,
+    // but it was just too bright at the lowest level, both aesthetically and in terms
+    // of possible extra power consumption from lighting the entire keyboard with
+    // all white. A hardcoded max brightness of 32 looks better and happens to match
+    // the range of valid BACKLIGHT_LEVELS, avoiding certain integer math issues.
+    uint8_t rgb_backlight_level = get_backlight_level() * (32 / BACKLIGHT_LEVELS);
+    if (rgb_backlight_level != 0 && *red == 0 && *green == 0 && *blue == 0) {
+        *red = rgb_backlight_level;
+        *green = rgb_backlight_level;
+        *blue = rgb_backlight_level;
+    }
+#endif
+}
+void rgb_matrix_set_color(int index, uint8_t red, uint8_t green, uint8_t blue) {
+    rgb_matrix_maybe_update_rgb_color(&red, &blue, &green);
+    rgb_matrix_driver.set_color(index, red, green, blue);
+}
 
-void rgb_matrix_set_color_all(uint8_t red, uint8_t green, uint8_t blue) { rgb_matrix_driver.set_color_all(red, green, blue); }
+void rgb_matrix_set_color_all(uint8_t red, uint8_t green, uint8_t blue) {
+    rgb_matrix_maybe_update_rgb_color(&red, &blue, &green);
+    rgb_matrix_driver.set_color_all(red, green, blue);
+}
 
 bool process_rgb_matrix(uint16_t keycode, keyrecord_t *record) {
 #ifdef RGB_MATRIX_KEYREACTIVE_ENABLED
