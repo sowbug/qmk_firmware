@@ -133,7 +133,7 @@ else
         # This ensures that the EEPROM page buffer fits into RAM
         USE_PROCESS_STACKSIZE = 0x600
         USE_EXCEPTIONS_STACKSIZE = 0x300
-        
+
         SRC += $(PLATFORM_COMMON_DIR)/eeprom_stm32.c
         SRC += $(PLATFORM_COMMON_DIR)/flash_stm32.c
         OPT_DEFS += -DEEPROM_EMU_STM32F042x6
@@ -291,7 +291,7 @@ ifeq ($(strip $(BACKLIGHT_CUSTOM_DRIVER)), yes)
     BACKLIGHT_DRIVER := custom
 endif
 
-VALID_BACKLIGHT_TYPES := pwm timer software custom
+VALID_BACKLIGHT_TYPES := pwm timer software rgb_matrix custom
 
 BACKLIGHT_ENABLE ?= no
 BACKLIGHT_DRIVER ?= pwm
