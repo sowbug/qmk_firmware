@@ -165,7 +165,7 @@ uint8_t rgb_matrix_map_row_column_to_led(uint8_t row, uint8_t column, uint8_t *l
 void rgb_matrix_update_pwm_buffers(void) { rgb_matrix_driver.flush(); }
 
 void rgb_matrix_maybe_update_rgb_color(uint8_t *red, uint8_t *green, uint8_t *blue) {
-#ifdef BACKLIGHT_DRIVER
+#ifdef BACKLIGHT_PIN
     if (!is_backlight_enabled()) {
         return;
     }
