@@ -25,6 +25,7 @@
 #define DIODE_DIRECTION COL2ROW
 
 #define RGB_DI_PIN B9
+#define BACKLIGHT_PIN rgb_matrix
 #ifdef RGB_DI_PIN
     #define RGB_MATRIX_KEYPRESSES
     #define DRIVER_LED_TOTAL (68)

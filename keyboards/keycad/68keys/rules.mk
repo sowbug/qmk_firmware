@@ -19,7 +19,8 @@ CONSOLE_ENABLE = no
 COMMAND_ENABLE = no     # Commands for debug and configuration
 SLEEP_LED_ENABLE = no   # Breathing sleep LED during USB suspend
 NKRO_ENABLE = yes		    # USB Nkey Rollover - if this doesn't work, see here: https://github.com/tmk/tmk_keyboard/wiki/FAQ#nkro-doesnt-work
-BACKLIGHT_ENABLE = no
+BACKLIGHT_ENABLE = yes
+BACKLIGHT_DRIVER = rgb_matrix
 AUDIO_ENABLE = no
 RGB_MATRIX_ENABLE = WS2812
 
