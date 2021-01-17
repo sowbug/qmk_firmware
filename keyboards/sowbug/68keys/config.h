@@ -46,9 +46,11 @@
 // apply the patches, and then uncomment the line below as well as the ones
 // in rules.mk.
 //
-#define BACKLIGHT_PIN rgb_matrix
-#define RGB_MATRIX_KEYPRESSES
-#define DRIVER_LED_TOTAL 68
-#define RGBLED_NUM DRIVER_LED_TOTAL
+// #define BACKLIGHT_PIN rgb_matrix
+#ifdef RGB_DI_PIN
+    #define RGB_MATRIX_KEYPRESSES
+    #define DRIVER_LED_TOTAL (68)
+    #define RGBLED_NUM (DRIVER_LED_TOTAL)
+#endif
 #define RGB_MATRIX_FRAMEBUFFER_EFFECTS
 #define RGB_MATRIX_MAXIMUM_BRIGHTNESS 128
