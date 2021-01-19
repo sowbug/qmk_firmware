@@ -19,29 +19,39 @@ static const pin_t backlight_pins[] = BACKLIGHT_PINS;
         }
 #else
 // we support only one backlight pin
+# if BACKLIGHT_PIN != rgb_matrix
 static const pin_t backlight_pin = BACKLIGHT_PIN;
+#else
+static const pin_t backlight_pin = -1;
+#endif
 #    define FOR_EACH_LED(x) x
 #endif
 
 static inline void backlight_on(pin_t backlight_pin) {
+# if BACKLIGHT_PIN != rgb_matrix
 #if BACKLIGHT_ON_STATE == 0
     writePinLow(backlight_pin);
 #else
     writePinHigh(backlight_pin);
+#endif
 #endif
 }
 
 static inline void backlight_off(pin_t backlight_pin) {
+# if BACKLIGHT_PIN != rgb_matrix
 #if BACKLIGHT_ON_STATE == 0
     writePinHigh(backlight_pin);
 #else
     writePinLow(backlight_pin);
 #endif
+#endif
 }
 
 void backlight_pins_init(void) {
+# if BACKLIGHT_PIN != rgb_matrix
     // Setup backlight pin as output and output to off state.
     FOR_EACH_LED(setPinOutput(backlight_pin); backlight_off(backlight_pin);)
+#endif
 }
 
 void backlight_pins_on(void) { FOR_EACH_LED(backlight_on(backlight_pin);) }
