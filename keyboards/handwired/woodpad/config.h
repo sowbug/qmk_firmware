@@ -1,9 +1,5 @@
 /*
-<<<<<<< HEAD
 Copyright 2017 WoodKeys
-=======
-Copyright 2017
->>>>>>> Remove `DESCRIPTION`, H-J (#11616)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -24,11 +20,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "config_common.h"
 
 /* USB Device descriptor parameter */
-#define VENDOR_ID       0xFEED
-#define PRODUCT_ID      0x6069
-#define DEVICE_VER      0x0001
-#define MANUFACTURER    WoodKeys.click
-#define PRODUCT         woodpad
+#define VENDOR_ID    0xFEED
+#define PRODUCT_ID   0x6069
+#define DEVICE_VER   0x0001
+#define MANUFACTURER WoodKeys.click
+#define PRODUCT      Woodpad
 
 /* key matrix size */
 #define MATRIX_ROWS 5
