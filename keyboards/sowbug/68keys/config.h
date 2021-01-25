@@ -46,7 +46,7 @@
 // apply the patches, and then uncomment the line below as well as the ones
 // in rules.mk.
 //
-// #define BACKLIGHT_PIN rgb_matrix
+#define BACKLIGHT_PIN rgb_matrix
 #define RGB_MATRIX_KEYPRESSES
 #define DRIVER_LED_TOTAL 68
 #define RGBLED_NUM DRIVER_LED_TOTAL

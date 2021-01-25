@@ -53,4 +53,4 @@
 // apply the patches, and then uncomment the line below as well as the ones
 // in rules.mk.
 //
-// #define BACKLIGHT_PIN rgb_matrix
+#define BACKLIGHT_PIN rgb_matrix
