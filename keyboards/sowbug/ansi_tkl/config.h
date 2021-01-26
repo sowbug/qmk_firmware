@@ -44,8 +44,8 @@
 
 #define RGB_DI_PIN B9
 #define RGB_MATRIX_KEYPRESSES
-#define DRIVER_LED_TOTAL (87)
-#define RGBLED_NUM (DRIVER_LED_TOTAL)
+#define DRIVER_LED_TOTAL 87
+#define RGBLED_NUM DRIVER_LED_TOTAL
 #define RGB_MATRIX_FRAMEBUFFER_EFFECTS
 #define RGB_MATRIX_MAXIMUM_BRIGHTNESS 128
 #define RGB_DISABLE_WHEN_USB_SUSPENDED true
@@ -54,4 +54,4 @@
 // apply the patches, and then uncomment the line below as well as the ones
 // in rules.mk.
 //
-// #define BACKLIGHT_PIN rgb_matrix
+#define BACKLIGHT_PIN rgb_matrix

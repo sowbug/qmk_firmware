@@ -27,8 +27,8 @@ RGB_MATRIX_DRIVER = WS2812
 # apply the patches, and then uncomment the lines below as well as the one in
 # config.h.
 #
-# BACKLIGHT_ENABLE = yes
-# BACKLIGHT_DRIVER = rgb_matrix
+BACKLIGHT_ENABLE = yes
+BACKLIGHT_DRIVER = rgb_matrix
 
 # Enter lower-power sleep mode when on the ChibiOS idle thread
 OPT_DEFS += -DCORTEX_ENABLE_WFI_IDLE=TRUE
