@@ -48,6 +48,7 @@
 #define RGBLED_NUM (DRIVER_LED_TOTAL)
 #define RGB_MATRIX_FRAMEBUFFER_EFFECTS
 #define RGB_MATRIX_MAXIMUM_BRIGHTNESS 128
+#define RGB_DISABLE_WHEN_USB_SUSPENDED true
 
 // Want backlighting and RGB Matrix patterns? See the note in the readme,
 // apply the patches, and then uncomment the line below as well as the ones
