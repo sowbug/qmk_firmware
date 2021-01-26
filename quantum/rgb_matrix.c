@@ -204,7 +204,9 @@ void rgb_matrix_set_color(int index, uint8_t red, uint8_t green, uint8_t blue) {
 }
 
 void rgb_matrix_set_color_all(uint8_t red, uint8_t green, uint8_t blue) {
-    rgb_matrix_maybe_update_rgb_color(&red, &blue, &green);
+    if (!g_suspend_state) {
+        rgb_matrix_maybe_update_rgb_color(&red, &blue, &green);
+    }
     rgb_matrix_driver.set_color_all(red, green, blue);
 }
 
@@ -502,10 +504,10 @@ void rgb_matrix_init(void) {
 }
 
 void rgb_matrix_set_suspend_state(bool state) {
+    g_suspend_state = state;
     if (RGB_DISABLE_WHEN_USB_SUSPENDED && state) {
         rgb_matrix_set_color_all(0, 0, 0);  // turn off all LEDs when suspending
     }
-    g_suspend_state = state;
 }
 
 bool rgb_matrix_get_suspend_state(void) { return g_suspend_state; }
